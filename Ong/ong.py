@@ -22,7 +22,7 @@ def calcular(*args):
             print(f"La productoria de {valor} es {resultado_productoria}")
 
 def main():
-    calcular("fact", 5, "prod", [3,6,4,2,8], "fact", 6)
+    calcular("fact", 5, "prod", [4,6,7,4,3], "fact", 6)
 
 if __name__ == "__main__":
     main()
