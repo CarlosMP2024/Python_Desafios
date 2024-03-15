@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aves de Chile</title>  
+  </head>
+  <body>
+    <h1>Aves de Chile</h1>
+    <div id="bird-list">
+      <!-- Aquí se llenará dinámicamente la lista de aves -->
+      {% for bird in bird_entries %}
+      <div class="bird-entry">
+        <h2>{{ bird.nameSpanish }} / {{ bird.nameEnglish }}</h2>
+        <img src="{{ bird.imageUrl }}" alt="{{ bird.nameSpanish }}" />
+      </div>
+      {% endfor %}
+    </div>
+    <script>
+      // Este script será utilizado para agregar dinámicamente las aves a la lista
+      function addBird(nameSpanish, nameEnglish, imageUrl) {
+        var birdList = document.getElementById("bird-list");
+        var birdDiv = document.createElement("div");
+        var birdName = document.createElement("h2");
+        var birdImage = document.createElement("img");
+
+        birdName.textContent = nameSpanish + " / " + nameEnglish;
+        birdImage.src = imageUrl;
+        birdImage.alt = nameSpanish;
+
+        birdDiv.appendChild(birdName);
+        birdDiv.appendChild(birdImage);
+
+        birdList.appendChild(birdDiv);
+      }
+    </script>
+  </body>
+</html>
